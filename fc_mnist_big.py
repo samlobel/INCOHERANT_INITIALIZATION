@@ -34,11 +34,11 @@ ITERS_BIG=50
 
 if MODEL == "1":
   FC_1 = ops._get_ortho_init_fc_layer(x, [784, 1000], 'FC_1', lr=0, num_iters=0, act=tf.nn.elu, bias=True)
-  FC_2 = ops._get_ortho_init_fc_layer(FC_1, [1000, 500], 'FC_2', lr=10, num_iters=0, act=tf.nn.elu, bias=True)
-  FC_3 = ops._get_ortho_init_fc_layer(FC_2, [500, 250], 'FC_3', lr=10, num_iters=0, act=tf.nn.elu, bias=True)
-  FC_4 = ops._get_ortho_init_fc_layer(FC_3, [250, 125], 'FC_4', lr=10, num_iters=0, act=tf.nn.elu, bias=True)
-  FC_5 = ops._get_ortho_init_fc_layer(FC_4, [125, 64], 'FC_5', lr=10, num_iters=0, act=tf.nn.elu, bias=True)
-  FC_6 = ops._get_ortho_init_fc_layer(FC_5, [64, 10], 'FC_6', lr=10, num_iters=0, act=tf.identity, bias=True)
+  FC_2 = ops._get_ortho_init_fc_layer(FC_1, [1000, 500], 'FC_2', lr=10, num_iters=100, act=tf.nn.elu, bias=True)
+  FC_3 = ops._get_ortho_init_fc_layer(FC_2, [500, 250], 'FC_3', lr=10, num_iters=400, act=tf.nn.elu, bias=True)
+  FC_4 = ops._get_ortho_init_fc_layer(FC_3, [250, 125], 'FC_4', lr=10, num_iters=400, act=tf.nn.elu, bias=True)
+  FC_5 = ops._get_ortho_init_fc_layer(FC_4, [125, 64], 'FC_5', lr=10, num_iters=400, act=tf.nn.elu, bias=True)
+  FC_6 = ops._get_ortho_init_fc_layer(FC_5, [64, 10], 'FC_6', lr=10, num_iters=400, act=tf.identity, bias=True)
 
   out = FC_6
   # ORTHO_LOSS = ORTHOG_DECAY * (ortho_penalty_1 + ortho_penalty_2 + ortho_penalty_3)

@@ -38,8 +38,8 @@ def _calculate_orthogonality_penalty(fc_tensor):
   Square it, sum it up
   """
   orth_mat = _calculate_orthogonality_for_fc_layer(fc_tensor)
-  penalty = tf.reduce_mean(tf.square(orth_mat))
-  # penalty = tf.reduce_mean(tf.abs(orth_mat))
+  # penalty = tf.reduce_mean(tf.square(orth_mat))
+  penalty = tf.reduce_mean(tf.abs(orth_mat))
   # penalty = tf.reduce_mean(orth_mat)
   return penalty
 

@@ -123,33 +123,6 @@ init = tf.initialize_all_variables()
 sess = tf.Session()
 sess.run(init)
 
-
-# print('orthogonalizing')
-# for i in range(800):
-#   loss, _ = sess.run([loss_orth, train_step_ortho])
-#   if i % 100 == 0:
-#     print("ORTHO\tstep: {}\tLOSS: {}".format(i, loss))
-#   #   print(sess.run(loss_orth))
-#   sess.run(train_step_ortho)
-
-# print('just training the first layer')
-# for i in range(2000):
-#   if i % 100 == 0:
-#     print(i)
-#     # print(sess.run(last_orth))    
-#     correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
-#     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-#     # print(sess.run([accuracy, cross_entropy], feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
-#     print(sess.run([accuracy, cross_entropy], feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
-
-#   batch_xs, batch_ys = mnist.train.next_batch(100)
-#   sess.run(first_layer_train_step, feed_dict={x: batch_xs, y_: batch_ys})
-
-
-# for i in range(1000):
-#   if i % 10 == 0:
-#     print("first layer step: {}".format(i))
-
 print('running')
 for i in range(30000):
   if i % 50 == 0:
